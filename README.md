@@ -9,7 +9,7 @@
 Попросите Codex:
 
 ```text
-Установи скилл из https://github.com/russian-ai-skills/russian-mat
+Установи скилл из https://github.com/ai-some-skills/russian-mat
 ```
 
 Или скопируйте содержимое репозитория в `~/.codex/skills/russian-mat/`. Файл `SKILL.md` должен находиться прямо в этой папке. После установки скилл будет доступен со следующего сообщения.
