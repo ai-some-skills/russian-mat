@@ -1,45 +1,49 @@
-# Матерный русский / Russian Mat
+# Russian Mat — Матерный русский
 
-Скилл для AI-агентов: живой матерный русский, грубый и экспрессивный тон, точные объяснения и переключение степени мата по запросу.
+**English** | [Русский](README.ru.md)
 
-По умолчанию — частый незапиканный мат. Скилл сохраняет факты, смысл, ссылки и технические идентификаторы. Запрос на такой стиль не включает непрошеные личные оскорбления.
+An Agent Skill for natural Russian profanity (*mat*), expressive colloquial writing, and precise explanations in a rough voice. It lets the user adjust profanity, harshness, and humor independently.
 
-## Установка через skills.sh
+The skill instructions and language references are in Russian. It is designed for Russian speech, including colloquial and euphemistic registers. This English README helps readers discover the skill and understand its controls; the examples stay in Russian because wording and tone matter.
 
-При установленном Node.js выполните:
+Once the user requests this style, the default is frequent, uncensored profanity. Facts, meaning, links, and technical identifiers are preserved. A request for profanity does not authorize unsolicited personal insults.
+
+## Installation through skills.sh
+
+With Node.js installed, run:
 
 ```bash
 npx skills add ai-some-skills/russian-mat
 ```
 
-CLI предложит выбрать агента и область установки. Подробнее — в [документации skills.sh](https://skills.sh/docs). Каталог [skills.sh](https://skills.sh) учитывает установки через CLI; сама публикация на GitHub не гарантирует немедленного появления в каталоге.
+The CLI offers agent and installation-scope selection. See the [skills.sh documentation](https://skills.sh/docs). The [skills.sh directory](https://skills.sh) uses CLI installation events; publishing a GitHub repository alone does not guarantee immediate listing.
 
-## Установка в Codex
+## Installation in Codex
 
-Попросите Codex:
+Ask Codex:
 
 ```text
-Установи скилл из https://github.com/ai-some-skills/russian-mat
+Install the skill from https://github.com/ai-some-skills/russian-mat
 ```
 
-Или скопируйте содержимое репозитория в `~/.codex/skills/russian-mat/`. Файл `SKILL.md` должен находиться прямо в этой папке. После установки скилл будет доступен со следующего сообщения.
+Or copy the repository contents into `~/.codex/skills/russian-mat/`. `SKILL.md` must sit directly in that directory. The skill will be available from the next message after installation.
 
-## Установка в Claude Code
+## Installation in Claude Code
 
-Нужны Git и установленный Claude Code. Для установки во все проекты выполните:
+You need Git and an installed copy of Claude Code. To install for all projects:
 
 ```bash
 git clone https://github.com/ai-some-skills/russian-mat.git \
   ~/.claude/skills/russian-mat
 ```
 
-Если папка уже существует, не клонируйте репозиторий поверх неё: сначала проверьте её содержимое. Для установки только в один проект используйте `.claude/skills/russian-mat/` внутри проекта вместо личной папки.
+If the directory already exists, inspect it first rather than cloning over it. For a single project, use `.claude/skills/russian-mat/` inside that project instead.
 
-В Claude Code вызовите `/russian-mat` или попросите: «Общайся со мной матом». Структура скилла соответствует формату Agent Skills; дополнительных программ и API для самого скилла не требуется. Подробнее — в [документации Claude Code](https://code.claude.com/docs/en/skills).
+In Claude Code, invoke `/russian-mat` or ask **«Общайся со мной матом»** (“Use Russian profanity when talking to me”). The skill follows the Agent Skills format. It requires no additional programs or APIs of its own. See the [Claude Code skills documentation](https://code.claude.com/docs/en/skills).
 
-## Установка в Claude в браузере
+## Installation in Claude on the web
 
-Для Skills требуется включённое выполнение кода. Подготовьте ZIP с папкой `russian-mat` на верхнем уровне:
+Skills require code execution to be enabled. Prepare a ZIP with a top-level `russian-mat` directory:
 
 ```text
 russian-mat.zip
@@ -49,31 +53,35 @@ russian-mat.zip
     └── evals/
 ```
 
-1. Скачайте репозиторий через **Code → Download ZIP** и распакуйте архив.
-2. Переименуйте полученную папку `russian-mat-main` в `russian-mat` и упакуйте её в новый ZIP, сохранив структуру выше.
-3. Откройте **Customize → Skills → + → Create skill → Upload a skill**, загрузите ZIP и включите скилл.
-4. В чате попросите: «Общайся со мной матом» или задайте нужные настройки тона.
+1. Download the repository using **Code → Download ZIP** and extract it.
+2. Rename `russian-mat-main` to `russian-mat` and create a new ZIP with the structure above.
+3. Open **Customize → Skills → + → Create skill → Upload a skill**, upload the ZIP, and enable the skill.
+4. Ask **«Общайся со мной матом»** or specify the tone you want.
 
-Инструкции Anthropic: [загрузка скиллов](https://support.claude.com/en/articles/12512180-use-skills-in-claude) и [структура ZIP](https://support.claude.com/en/articles/12512198-how-to-create-custom-skills).
+Anthropic's instructions: [uploading skills](https://support.claude.com/en/articles/12512180-use-skills-in-claude) and [ZIP structure](https://support.claude.com/en/articles/12512198-how-to-create-custom-skills).
 
-Структура подготовлена для Codex и Claude. Опубликованные качественные пробы выполнены на GPT; на Claude скилл пока не проверялся, поэтому естественность речи и удержание настроек могут отличаться.
+The structure is prepared for Codex and Claude. Published qualitative trials were run on GPT. The skill has not yet been tested on Claude, so naturalness and retention of tone settings may differ.
 
-## Использование
+## Usage
 
-- «Общайся со мной матом» — включает режим для диалога.
-- «Перепиши этот текст с матом» — меняет стиль отдельного текста.
-- «Ещё жёстче» / «помягче» — регулирует резкость.
-- «Много мата, но дружелюбно и без шуток» — задаёт три независимые настройки.
-- «Убавь только мат» / «добавь юмора» — меняет одну ось.
-- «Перепиши и покажи разбор» — добавляет объяснение конкретных правок.
-- «Околоматерно, без прямого мата» — включает эвфемизмы и намёки.
-- «Теперь без мата» — убирает мат; «нейтрально» — также ругательные намёки.
+| Russian request | Meaning and intended scope |
+| --- | --- |
+| «Общайся со мной матом» | Enable the style for the conversation. |
+| «Перепиши этот текст с матом» | Rewrite one text using profanity. |
+| «Ещё жёстче» / «помягче» | Make the voice harsher or gentler. |
+| «Много мата, но дружелюбно и без шуток» | Use frequent profanity, a friendly tone, and no jokes: three independent settings. |
+| «Убавь только мат» / «добавь юмора» | Change one setting without resetting the others. |
+| «Перепиши и покажи разбор» | Rewrite and explain the specific edits. |
+| «Околоматерно, без прямого мата» | Use euphemisms and hints rather than explicit profanity. |
+| «Теперь без мата» / «нейтрально» | Remove profanity; requesting a neutral tone also removes profane hints. |
 
-## Пример
+## Example
 
-**Запрос:** «Много мата, прямо и без шуток. Объясни разницу между аутентификацией и авторизацией».
+**Russian request:** «Много мата, прямо и без шуток. Объясни разницу между аутентификацией и авторизацией».
 
-**Пример ответа:**
+**English explanation:** The user asks for frequent profanity, a direct tone, no jokes, and an explanation of authentication versus authorization. The rough language emphasizes the distinction without insulting the reader.
+
+**Illustrative response in Russian:**
 
 > Аутентификация проверяет, кто ты. Авторизация — что тебе разрешено.
 >
@@ -81,28 +89,30 @@ russian-mat.zip
 >
 > «Вошёл» и «можно всё» — разные вещи, блядь. Перепутать их в системе доступа — хуёвая идея.
 
-Это авторская иллюстрация желаемого голоса, не результат проверки на Claude.
+**Meaning:** Authentication establishes identity; authorization determines permitted actions. Signing in with a password does not itself grant permission to delete someone else's project. The profanity changes the voice, not the technical distinction.
 
-## Состав
+This is an authored illustration of the intended voice, not a result from testing on Claude.
 
-Начните с [карты материалов](references/reference-map.md): она ведёт к нужному справочнику без загрузки всего набора.
+## Contents
 
-- [SKILL.md](SKILL.md) — порядок работы и общие ограничения.
-- [Управление стилем](references/style-controls.md) — мат, резкость, юмор и область действия.
-- [Продолжительный диалог](references/conversation-state.md) и [защита от повторов](references/repetition.md).
-- [Лексическая памятка](references/lexicon.md) — 210 табличных позиций в основном, расширенном словарях и выражениях.
-- [Жанры](references/genres.md) и [редакторский разбор](references/editing.md).
-- [Инженерный разговор](references/engineering.md) — состояния систем, согласование и буквальные инструкции.
-- [Словотворчество](references/word-formation.md) — новые формы и рифмованные пары.
-- Речевые задачи, оттенки, сочетаемость, варианты, диалоги и игровые приёмы — через карту материалов.
-- [Одиночные сценарии](evals/evals.json), [длинные сценарии](evals/conversations.json) и [результаты проб](evals/qualitative-review.md).
+The instructions and references linked below are in Russian. Start with the [reference map](references/reference-map.md) to load only the material needed for a task.
 
-## Источник
+- [SKILL.md](SKILL.md): workflow and general constraints.
+- [Style controls](references/style-controls.md): profanity, harshness, humor, and scope.
+- [Longer conversations](references/conversation-state.md) and [avoiding repetition](references/repetition.md).
+- [Lexicon reference](references/lexicon.md): 210 tabular entries across the main vocabulary, extended vocabulary, and expressions.
+- [Genres](references/genres.md) and [editorial explanations](references/editing.md).
+- [Engineering conversations](references/engineering.md): system states, coordination, and literal instructions.
+- [Word formation](references/word-formation.md): new forms and rhyming pairs.
+- Speech functions, shades of meaning, collocations, variants, dialogues, and playful techniques: follow the reference map.
+- [Single-turn scenarios](evals/evals.json), [longer scenarios](evals/conversations.json), and [qualitative trial results](evals/qualitative-review.md).
 
-При подготовке использованы словарная часть, пословицы и поговорки, а также выбранные сказочные, пародийные и анекдотические фрагменты книги «Русский мат. Антология», под ред. Ф. Н. Ильясова, 1994. Памятка содержит краткий авторский пересказ выбранных значений. Исходный PDF и полный текст книги не распространяются. Современные примеры написаны специально для скилла.
+## Sources
 
-Инженерные приёмы и рифмованные пары дополнены с учётом публичного [pohuy](https://github.com/smixs/pohuy), автор Serge Shima (smixs), MIT. Авторство и лицензия сохранены в [уведомлении](third-party/pohuy-LICENSE).
+The skill draws on the dictionary section, proverbs and sayings, and selected folktale, parody, and anecdotal passages from *Русский мат. Антология* (*Russian Mat: An Anthology*), edited by F. N. Ilyasov, 1994. The reference provides brief original paraphrases of selected meanings. The source PDF and full book text are not distributed. Contemporary examples were written for the skill.
 
-## Лицензия
+Engineering phrasing and rhyming pairs also draw on the public [pohuy](https://github.com/smixs/pohuy) project by Serge Shima (smixs), licensed under MIT. Attribution and the license are preserved in the [third-party notice](third-party/pohuy-LICENSE).
 
-Оригинальные инструкции, примеры и вспомогательные материалы репозитория доступны по [MIT](LICENSE). Лицензия не распространяется на упомянутую книгу и иные сторонние произведения.
+## License
+
+Original instructions, examples, and supporting materials are available under [MIT](LICENSE). The license does not cover the cited book or other third-party works.
