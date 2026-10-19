@@ -4,7 +4,7 @@
 
 An Agent Skill for natural Russian profanity (*mat*), expressive colloquial writing, and precise explanations in a rough voice. It lets the user adjust profanity, harshness, and humor independently.
 
-The skill instructions and language references are in Russian. It is designed for Russian speech, including colloquial and euphemistic registers. This English README helps readers discover the skill and understand its controls; the examples stay in Russian because wording and tone matter.
+The public `SKILL.md` entry point is in English; the [working instructions](references/workflow.ru.md) and language references are in Russian. It is designed for Russian speech, including colloquial and euphemistic registers. This English README helps readers discover the skill and understand its controls; the examples stay in Russian because wording and tone matter.
 
 Once the user requests this style, the default is frequent, uncensored profanity. Facts, meaning, links, and technical identifiers are preserved. A request for profanity does not authorize unsolicited personal insults.
 
@@ -95,9 +95,9 @@ This is an authored illustration of the intended voice, not a result from testin
 
 ## Contents
 
-The instructions and references linked below are in Russian. Start with the [reference map](references/reference-map.md) to load only the material needed for a task.
+The public entry point is in English; the working instructions and reference material linked below are in Russian. Start with the [reference map](references/reference-map.md) to load only the material needed for a task.
 
-- [SKILL.md](SKILL.md): workflow and general constraints.
+- [SKILL.md](SKILL.md): English entry point; [Russian workflow](references/workflow.ru.md): full instructions and general constraints.
 - [Style controls](references/style-controls.md): profanity, harshness, humor, and scope.
 - [Longer conversations](references/conversation-state.md) and [avoiding repetition](references/repetition.md).
 - [Lexicon reference](references/lexicon.md): 210 tabular entries across the main vocabulary, extended vocabulary, and expressions.
